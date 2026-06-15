@@ -1,0 +1,30 @@
+Determining if the F_FULLFSYNC exist failed with the following output:
+Change Dir: /home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9c353/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9c353.dir/build.make CMakeFiles/cmTC_9c353.dir/build
+gmake[1]: Entering directory '/home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9c353.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -W -Wextra -Wall -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -std=c++17 -fno-omit-frame-pointer -momit-leaf-frame-pointer -march=native -Werror -fno-builtin-memcmp -Wno-array-bounds -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -march=native -march=native -Werror -fno-builtin-memcmp  -o CMakeFiles/cmTC_9c353.dir/CheckSymbolExists.cxx.o -c /home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘F_FULLFSYNC’ was not declared in this scope
+    8 |   return ((int*)(&F_FULLFSYNC))[argc];
+      |                   ^~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_9c353.dir/build.make:78: CMakeFiles/cmTC_9c353.dir/CheckSymbolExists.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_9c353/fast] Error 2
+
+
+File /home/yfl/exp_coolsm_learned_healing/titan/build_dev/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef F_FULLFSYNC
+  return ((int*)(&F_FULLFSYNC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
